@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/bootstrap.php';
 if (!isset($pageTitle)) $pageTitle = "SUGNAYU | Hair Care & Personal Care";
 if (!isset($pageDescription)) $pageDescription = "Discover SUGNAYU, explore our brand story and find updates about our hair-care collection.";
 if (!isset($activePage)) $activePage = "";
@@ -31,6 +32,6 @@ if (!isset($activePage)) $activePage = "";
         <a class="<?= $activePage === 'about' ? 'active' : '' ?>" href="about.php">Our Story</a>
         <a class="<?= $activePage === 'contact' ? 'active' : '' ?>" href="contact.php">Contact</a>
       </nav>
-      <div class="nav-actions"><a class="nav-search" href="shop.php" aria-label="Explore products">⌕</a><a class="nav-cart" href="contact.php" aria-label="Shopping cart coming soon">♡ <span>0</span></a></div>
+      <div class="nav-actions"><a class="nav-search" href="shop.php" aria-label="Explore products">⌕</a><a class="nav-cart" href="cart.php" aria-label="Shopping cart">🛒 <span><?= cartCount() ?></span></a></div>
     </div>
   </header>

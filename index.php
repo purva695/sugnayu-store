@@ -39,31 +39,28 @@ include __DIR__ . "/includes/header.php";
   <section class="section section-soft" id="collection">
     <div class="section-heading">
       <div><span class="eyebrow">THE SUGNAYU EDIT</span>
-        <h2>A closer look at our collection</h2>
+        <h2>Explore the SUGNAYU collection</h2>
       </div>
+      <a class="text-link" href="shop.php">View all products →</a>
     </div>
+    <?php $homeProducts = sugnayuProducts(); ?>
     <div class="product-grid">
-      <article class="product-card product-card-featured">
-        <div class="placeholder-art placeholder-blue"><span class="placeholder-symbol">❋</span><span>THE COLLECTION<br>IS GROWING</span></div>
-        <div class="product-info"><span class="product-category">HAIR CARE</span>
-          <h3>SUGNAYU Shampoo</h3>
-          <p>Product information and available pack sizes will be added here once confirmed.</p><span class="price-placeholder">Price to be announced</span>
-        </div>
-      </article>
-      <article class="product-card product-card-placeholder">
-        <div class="placeholder-art"><span class="placeholder-symbol">✳</span><span>YOUR NEXT<br>FAVOURITE</span></div>
-        <div class="product-info"><span class="product-category">COMING SOON</span>
-          <h3>More from SUGNAYU</h3>
-          <p>This space is ready for another product when the catalogue is finalised.</p><span class="price-placeholder">Details coming soon</span>
-        </div>
-      </article>
-      <article class="product-card product-card-placeholder">
-        <div class="placeholder-art placeholder-blue"><span class="placeholder-symbol">❋</span><span>THE COLLECTION<br>IS GROWING</span></div>
-        <div class="product-info"><span class="product-category">COMING SOON</span>
-          <h3>Explore what’s next</h3>
-          <p>We’ll share accurate product details here as they become available.</p><span class="price-placeholder">Details coming soon</span>
-        </div>
-      </article>
+      <?php foreach ($homeProducts as $product): ?>
+        <article class="product-card">
+          <a class="product-image-link" href="product.php?slug=<?= e($product['slug']) ?>">
+            <div class="placeholder-art <?= $product['id'] % 2 ? 'placeholder-blue' : '' ?>"><span class="placeholder-symbol">✳</span><span>SUGNAYU<br>PRODUCT IMAGE<br>COMING SOON</span></div>
+          </a>
+          <div class="product-info"><span class="product-category"><?= e(strtoupper($product['category'])) ?></span>
+            <h3><a href="product.php?slug=<?= e($product['slug']) ?>"><?= e($product['name']) ?></a></h3>
+            <p><?= e($product['short_description']) ?></p>
+            <div class="product-price"><?= sugnayuMoney($product['price']) ?> <small><?= e($product['pack_size']) ?></small></div>
+            <div class="product-actions">
+              <form method="post" action="cart-action.php"><?= csrfField() ?><input type="hidden" name="action" value="add"><input type="hidden" name="product_id" value="<?= (int)$product['id'] ?>"><input type="hidden" name="quantity" value="1"><button class="btn btn-outline" type="submit">Add to Cart</button></form>
+              <form method="post" action="cart-action.php"><?= csrfField() ?><input type="hidden" name="action" value="buy"><input type="hidden" name="product_id" value="<?= (int)$product['id'] ?>"><input type="hidden" name="quantity" value="1"><button class="btn btn-primary" type="submit">Buy Now</button></form>
+            </div>
+          </div>
+        </article>
+      <?php endforeach; ?>
     </div>
   </section>
 
