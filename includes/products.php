@@ -11,7 +11,7 @@ function sugnayuProducts(): array
 {
     return [
         [
-            'id' => 4,
+            'id' => 1,
             'name' => 'SUGNAYU Hair Fall Shampoo',
             'slug' => 'sugnayu-hair-fall-shampoo',
             'price' => 315.00,
@@ -24,7 +24,7 @@ function sugnayuProducts(): array
             'stock' => 100
         ],
         [
-            'id' => 5,
+            'id' => 2,
             'name' => 'SUGNAYU Hair Oil with Brahmi & Bhringraj',
             'slug' => 'sugnayu-hair-oil-100-ml',
             'price' => 295.00,
@@ -37,7 +37,7 @@ function sugnayuProducts(): array
             'stock' => 100
         ],
         [
-            'id' => 6,
+            'id' => 3,
             'name' => 'SUGNAYU Sandal Rose Shampoo with Conditioner',
             'slug' => 'sugnayu-sandal-rose-shampoo-conditioner',
             'price' => 345.00,
