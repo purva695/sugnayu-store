@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '/includes/auth.php';
+requireCustomerLogin();
+?>
+<?php
 require_once __DIR__ . '/includes/bootstrap.php';
 $pageTitle = "Checkout | SUGNAYU";
 $pageDescription = "Enter your delivery details and choose a payment method for your SUGNAYU order.";
