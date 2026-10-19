@@ -1,0 +1,11 @@
+<?php
+require_once __DIR__ . '/common.php'; admin_require_login();
+$search=trim($_GET['q']??'');
+if ($search!=='') { $stmt=$pdo->prepare('SELECT p.*, c.name AS category_name FROM products p LEFT JOIN categories c ON c.id=p.category_id WHERE p.name LIKE ? OR p.slug LIKE ? ORDER BY p.id DESC'); $like='%'.$search.'%'; $stmt->execute([$like,$like]); $products=$stmt->fetchAll(PDO::FETCH_ASSOC); }
+else { $products=$pdo->query('SELECT p.*, c.name AS category_name FROM products p LEFT JOIN categories c ON c.id=p.category_id ORDER BY p.id DESC')->fetchAll(PDO::FETCH_ASSOC); }
+admin_render_start('Products');
+echo '<section class="panel"><div class="panel-head"><div><h2>Your product catalogue</h2><p>Add products or update price, stock and visibility.</p></div><a class="btn primary" href="product-form.php">+ Add product</a></div><form class="search-form" method="get"><input name="q" placeholder="Search products by name..." value="'.admin_e($search).'"><button class="btn secondary">Search</button>'.($search?'<a class="text-link" href="products.php">Clear</a>':'').'</form><div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+if(!$products) echo '<tr><td colspan="6" class="empty">No products found. Add a product or check your database.</td></tr>';
+foreach($products as $p) echo '<tr><td><strong>'.admin_e($p['name']).'</strong><small>'.admin_e($p['slug']).'</small></td><td>'.admin_e($p['category_name']??'—').'</td><td>₹'.number_format((float)$p['price'],2).'</td><td>'.(int)$p['stock'].'</td><td><span class="pill '.($p['status']==='active'?'green':'muted-pill').'">'.admin_e($p['status']).'</span></td><td class="actions"><a class="btn small secondary" href="product-form.php?id='.(int)$p['id'].'">Edit</a><form method="post" action="product-delete.php" onsubmit="return confirm(\'Delete this product? Existing order records will be retained where supported.\')"><input type="hidden" name="csrf_token" value="'.admin_e(admin_csrf_token()).'"><input type="hidden" name="id" value="'.(int)$p['id'].'"><button class="btn small danger" type="submit">Delete</button></form></td></tr>';
+echo '</tbody></table></div></section>';
+admin_render_end();
