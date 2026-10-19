@@ -15,7 +15,7 @@
   </div>
   <div class="footer-bottom"><span>© <?= date('Y') ?> SUGNAYU. All rights reserved.</span><span>Made with care for a better browsing experience.</span></div>
 </footer>
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js?v=<?= filemtime(__DIR__ . '/../assets/js/script.js') ?>"></script>
 </body>
 
 </html>
