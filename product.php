@@ -22,9 +22,18 @@ include __DIR__ . '/includes/header.php';
         </section>
     <?php else: ?>
         <section class="section product-detail-layout">
-            <div class="product-detail-image">
-                <div class="placeholder-art placeholder-blue"><span class="placeholder-symbol">✳</span><span>SUGNAYU<br>PRODUCT IMAGE<br>COMING SOON</span></div>
-            </div>
+            <?php if (!empty($product['image'])): ?>
+                <img
+                    src="<?= e($product['image']) ?>"
+                    alt="<?= e($product['name']) ?>"
+                    class="product-image"
+                    loading="lazy">
+            <?php else: ?>
+                <div class="placeholder-art <?= $product['id'] % 2 ? 'placeholder-blue' : '' ?>">
+                    <span class="placeholder-symbol">✳</span>
+                    <span>SUGNAYU<br>PRODUCT IMAGE<br>COMING SOON</span>
+                </div>
+            <?php endif; ?>
             <div class="product-detail-copy">
                 <div class="breadcrumb"><a href="index.php">Home</a><span>/</span><a href="shop.php">Shop</a><span>/</span><span><?= e($product['name']) ?></span></div>
                 <span class="product-category"><?= e(strtoupper($product['category'])) ?></span>

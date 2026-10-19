@@ -19,7 +19,7 @@ function sugnayuProducts(): array
             'category' => 'Shampoo',
             'short_description' => 'Sulphate and paraben free shampoo.',
             'description' => 'SUGNAYU Hair Fall Shampoo, 200 ml. The packaging describes this product as sulphate and paraben free.',
-            'image' => '',
+            'image' => 'assets/images/hair-fall-shampoo.png',
             'status' => 1,
             'stock' => 100
         ],
@@ -32,7 +32,7 @@ function sugnayuProducts(): array
             'category' => 'Hair Oil',
             'short_description' => 'Hair oil featuring Brahmi and Bhringraj.',
             'description' => 'SUGNAYU Hair Oil, 100 ml, featuring Brahmi and Bhringraj.',
-            'image' => '',
+            'image' => 'assets/images/hair-oil.png',
             'status' => 1,
             'stock' => 100
         ],
@@ -45,7 +45,7 @@ function sugnayuProducts(): array
             'category' => 'Shampoo',
             'short_description' => 'Shampoo with conditioner for all hair types.',
             'description' => 'SUGNAYU Sandal Rose Shampoo with Conditioner. Confirm the final pack size and product label before publication.',
-            'image' => '',
+            'image' => 'assets/images/sandal-rose-shampoo.png',
             'status' => 1,
             'stock' => 100
         ],

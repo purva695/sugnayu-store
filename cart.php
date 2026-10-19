@@ -25,7 +25,17 @@ include __DIR__ . '/includes/header.php';
                     <?= csrfField() ?>
                     <?php foreach ($items as $item): ?>
                         <article class="cart-item">
-                            <div class="cart-thumb"><span>✳</span><small>SUGNAYU</small></div>
+                            <div class="cart-thumb">
+                                <?php if (!empty($item['image'])): ?>
+                                    <img
+                                        src="<?= e($item['image']) ?>"
+                                        alt="<?= e($item['name']) ?>"
+                                        class="cart-product-image">
+                                <?php else: ?>
+                                    <span>✳</span>
+                                    <small>SUGNAYU</small>
+                                <?php endif; ?>
+                            </div>
                             <div class="cart-item-copy"><span class="product-category"><?= e($item['category']) ?></span>
                                 <h3><?= e($item['name']) ?></h3>
                                 <p><?= e($item['pack_size']) ?></p><strong><?= sugnayuMoney($item['price']) ?></strong>

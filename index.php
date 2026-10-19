@@ -47,9 +47,25 @@ include __DIR__ . "/includes/header.php";
     <div class="product-grid">
       <?php foreach ($homeProducts as $product): ?>
         <article class="product-card">
-          <a class="product-image-link" href="product.php?slug=<?= e($product['slug']) ?>">
-            <div class="placeholder-art <?= $product['id'] % 2 ? 'placeholder-blue' : '' ?>"><span class="placeholder-symbol">✳</span><span>SUGNAYU<br>PRODUCT IMAGE<br>COMING SOON</span></div>
+
+          <a class="product-image-link"
+            href="product.php?slug=<?= e($product['slug']) ?>">
+
+            <?php if (!empty($product['image'])): ?>
+              <img
+                src="<?= e($product['image']) ?>"
+                alt="<?= e($product['name']) ?>"
+                class="product-image"
+                loading="lazy">
+            <?php else: ?>
+              <div class="placeholder-art <?= $product['id'] % 2 ? 'placeholder-blue' : '' ?>">
+                <span class="placeholder-symbol">✳</span>
+                <span>SUGNAYU<br>PRODUCT IMAGE<br>COMING SOON</span>
+              </div>
+            <?php endif; ?>
+
           </a>
+
           <div class="product-info"><span class="product-category"><?= e(strtoupper($product['category'])) ?></span>
             <h3><a href="product.php?slug=<?= e($product['slug']) ?>"><?= e($product['name']) ?></a></h3>
             <p><?= e($product['short_description']) ?></p>
