@@ -303,7 +303,7 @@ include __DIR__ . "/includes/header.php";
       <img src="assets/images/brand-nykaa.png" alt="Nykaa">
       <img src="assets/images/brand-bigbasket.png" alt="BigBasket">
       <img src="assets/images/brand-purple.jpg" alt="Purplle">
-      <img src="assets/images/brand-meesho.jpg" alt="Meesho">
+      <img src="assets/images/brand-meesho.png" alt="Meesho">
     </div>
   </section>
 </main>
