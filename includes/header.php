@@ -39,6 +39,47 @@ if (!isset($activePage)) $activePage = "";
           <a href="signup.php">Sign Up</a>
         <?php endif; ?>
       </nav>
-      <div class="nav-actions"><a class="nav-search" href="shop.php" aria-label="Explore products">⌕</a><a class="nav-cart" href="cart.php" aria-label="Shopping cart">🛒 <span><?= cartCount() ?></span></a></div>
+
+
+      <div class="nav-actions">
+        <div class="header-search">
+          <button
+            type="button"
+            class="nav-search"
+            id="searchToggle"
+            aria-label="Open product search"
+            aria-expanded="false"
+            aria-controls="headerSearchForm">
+            <svg viewBox="0 0 24 24" width="21" height="21"
+              fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </button>
+
+          <form
+            class="nav-search-form"
+            id="headerSearchForm"
+            action="shop.php"
+            method="get"
+            hidden>
+            <input
+              type="search"
+              name="q"
+              placeholder="Search products..."
+              aria-label="Search products"
+              value="<?= e($_GET['q'] ?? '') ?>">
+            <button type="submit" aria-label="Submit search">
+              Search
+            </button>
+          </form>
+        </div>
+
+        <a class="nav-cart" href="cart.php" aria-label="Shopping cart">
+          🛒 <span><?= cartCount() ?></span>
+        </a>
+      </div>
+
     </div>
   </header>

@@ -24,23 +24,67 @@ if (!$items) {
 $name = trim($customer['full_name'] ?? '');
 $email = trim($customer['email'] ?? '');
 
-$phone = trim($_POST['phone'] ?? '');
-$pincode = trim($_POST['pincode'] ?? '');
-$address = trim($_POST['address'] ?? '');
-$city = trim($_POST['city'] ?? '');
-$state = trim($_POST['state'] ?? '');
+
+$savedAddressId = $_POST['saved_address_id'] ?? '';
+
 $method = $_POST['payment_method'] ?? 'cod';
+
+if ($savedAddressId !== '' && $savedAddressId !== 'new') {
+
+    // Only allow addresses belonging to the logged-in customer.
+    if (
+        !ctype_digit((string)$savedAddressId) ||
+        (int)$savedAddressId < 1
+    ) {
+        http_response_code(422);
+        exit('Please select a valid delivery address.');
+    }
+
+    $stmt = $pdo->prepare("
+        SELECT full_name, phone, address_line, city, state, postal_code
+        FROM customer_addresses
+        WHERE id = ? AND customer_email = ?
+        LIMIT 1
+    ");
+
+    $stmt->execute([(int)$savedAddressId, $email]);
+    $selectedAddress = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$selectedAddress) {
+        http_response_code(422);
+        exit('The selected delivery address was not found.');
+    }
+
+    $name = $selectedAddress['full_name'];
+    $phone = $selectedAddress['phone'];
+    $address = $selectedAddress['address_line'];
+    $city = $selectedAddress['city'];
+    $state = $selectedAddress['state'];
+    $pincode = $selectedAddress['postal_code'];
+
+} else {
+
+    // New address entered during checkout.
+    $phone = trim($_POST['phone'] ?? '');
+    $pincode = trim($_POST['pincode'] ?? '');
+    $address = trim($_POST['address'] ?? '');
+    $city = trim($_POST['city'] ?? '');
+    $state = trim($_POST['state'] ?? '');
+}
 
 if (
     $name === '' ||
     !filter_var($email, FILTER_VALIDATE_EMAIL) ||
     !preg_match('/^[6-9][0-9]{9}$/', $phone) ||
     !preg_match('/^[0-9]{6}$/', $pincode) ||
-    $address === '' || $city === '' || $state === ''
+    $address === '' ||
+    $city === '' ||
+    $state === ''
 ) {
     http_response_code(422);
     exit('Please check your delivery details and try again.');
 }
+
 
 if ($method !== 'cod') {
     http_response_code(422);
@@ -154,6 +198,58 @@ try {
         ]);
     }
 
+    // Save the delivery address to the customer's saved addresses.
+    $addressStmt = $pdo->prepare(
+        'SELECT id FROM customer_addresses
+         WHERE customer_email = ?
+           AND address_line = ?
+           AND city = ?
+           AND state = ?
+           AND postal_code = ?
+         LIMIT 1'
+    );
+
+    $addressStmt->execute([
+        $email,
+        $address,
+        $city,
+        $state,
+        $pincode
+    ]);
+
+    if (!$addressStmt->fetchColumn()) {
+        $countStmt = $pdo->prepare(
+            'SELECT COUNT(*) FROM customer_addresses
+             WHERE customer_email = ?'
+        );
+        $countStmt->execute([$email]);
+
+        $isFirstAddress = (int)$countStmt->fetchColumn() === 0;
+
+        $saveAddressStmt = $pdo->prepare(
+            'INSERT INTO customer_addresses
+             (
+                 customer_email, full_name, phone,
+                 address_line, city, state, postal_code,
+                 address_type, is_default
+             )
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        );
+
+        $saveAddressStmt->execute([
+            $email,
+            $name,
+            $phone,
+            $address,
+            $city,
+            $state,
+            $pincode,
+            'Home',
+            $isFirstAddress ? 1 : 0
+        ]);
+    }
+
+
     $pdo->commit();
 
     $_SESSION['last_order_id'] = $orderId;
@@ -163,16 +259,13 @@ try {
 
     header('Location: order-success.php?order=' . $orderId);
     exit;
-
-}catch (Throwable $e) {
+} catch (Throwable $e) {
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
 
     http_response_code(500);
 
-    exit(
-        'Error: ' .
-        htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8')
-    );
+    exit('Error: ' .
+        htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8'));
 }

@@ -33,6 +33,16 @@ require __DIR__ . '/includes/header.php';
             <p><strong>Mobile:</strong> <?= e($customer['phone']) ?></p>
         </div>
 
+        <section class="saved-addresses">
+            <h2>My Delivery Addresses</h2>
+            <p>Manage your saved delivery addresses.</p>
+
+            <a class="btn btn-primary" href="address.php">
+                Manage Addresses
+            </a>
+        </section>
+
+
         <form method="post" action="logout.php">
             <?= csrfField() ?>
             <button class="btn btn-primary" type="submit">Logout</button>

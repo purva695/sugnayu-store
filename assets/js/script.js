@@ -22,3 +22,37 @@ if (previewForm) {
         "This is a design preview only. Message sending will be enabled after the PHP backend is connected.";
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("searchToggle");
+    const form = document.getElementById("headerSearchForm");
+
+    if (!toggle || !form) return;
+
+    const searchInput = form.querySelector('input[name="q"]');
+
+    toggle.addEventListener("click", function () {
+        const isOpen = !form.hidden;
+
+        form.hidden = isOpen;
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+
+        if (!isOpen && searchInput) {
+            searchInput.focus();
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".header-search")) {
+            form.hidden = true;
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            form.hidden = true;
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+});
