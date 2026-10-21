@@ -5419,3 +5419,337 @@ footer .footer-brand img {
         height: 46px !important;
     }
 }
+
+/* =========================================
+   SUGNAYU MOBILE HERO BANNER FIX
+   Desktop design remains unchanged
+========================================= */
+
+@media (max-width: 760px) {
+
+    .reference-home .ref-hero {
+        position: relative !important;
+        width: 100% !important;
+        height: 250px !important;
+        min-height: 250px !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+    }
+
+    .reference-home .ref-slide {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .reference-home .ref-slide-image {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 65% center !important;
+    }
+
+    .reference-home .ref-slide-shade {
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(
+            90deg,
+            rgba(5, 42, 27, 0.72) 0%,
+            rgba(5, 42, 27, 0.42) 48%,
+            rgba(5, 42, 27, 0.04) 100%
+        ) !important;
+    }
+
+    .reference-home .ref-slide-copy {
+        position: absolute !important;
+        top: 50% !important;
+        left: 0 !important;
+        transform: translateY(-50%) !important;
+        width: 72% !important;
+        max-width: 270px !important;
+        padding: 12px 0 12px 18px !important;
+        box-sizing: border-box !important;
+        z-index: 2 !important;
+    }
+
+    .reference-home .ref-slide-copy > span {
+        display: block !important;
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 9px !important;
+    }
+
+    .reference-home .ref-slide-copy h1 {
+        font-size: clamp(23px, 7vw, 29px) !important;
+        line-height: 1.05 !important;
+        margin: 0 0 9px !important;
+        overflow-wrap: normal !important;
+    }
+
+    .reference-home .ref-slide-copy p {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        margin: 0 0 12px !important;
+        max-width: 210px !important;
+    }
+
+    .reference-home .ref-slide-copy .ref-button {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 11px 15px !important;
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+    }
+
+    .reference-home .ref-arrow {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        font-size: 20px !important;
+        z-index: 4 !important;
+    }
+
+    .reference-home .ref-prev {
+        left: 7px !important;
+    }
+
+    .reference-home .ref-next {
+        right: 7px !important;
+    }
+
+    .reference-home .ref-dots {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 5 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 7px !important;
+    }
+
+    .reference-home .ref-dots button {
+        width: 7px !important;
+        height: 7px !important;
+        min-width: 7px !important;
+        min-height: 7px !important;
+        padding: 0 !important;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+    .reference-home .ref-hero {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+    .reference-home .ref-slide-copy {
+        width: 75% !important;
+        padding-left: 14px !important;
+    }
+
+    .reference-home .ref-slide-copy h1 {
+        font-size: 23px !important;
+    }
+
+    .reference-home .ref-slide-copy p {
+        font-size: 9px !important;
+    }
+}
+
+/* ==========================================
+   SHOP & OUR STORY - MOBILE HERO BANNER
+   Same responsive design as homepage
+========================================== */
+
+@media (max-width: 760px) {
+
+    #pageHeroSlider.ref-hero {
+        position: relative !important;
+        width: 100% !important;
+        height: 250px !important;
+        min-height: 250px !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+    }
+
+    #pageHeroSlider .ref-slide {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    #pageHeroSlider .ref-slide-image {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 65% center !important;
+    }
+
+    #pageHeroSlider .ref-slide-shade {
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(
+            90deg,
+            rgba(5, 42, 27, 0.72) 0%,
+            rgba(5, 42, 27, 0.42) 48%,
+            rgba(5, 42, 27, 0.04) 100%
+        ) !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy {
+        position: absolute !important;
+        top: 50% !important;
+        left: 0 !important;
+        transform: translateY(-50%) !important;
+        width: 72% !important;
+        max-width: 270px !important;
+        padding: 12px 0 12px 18px !important;
+        box-sizing: border-box !important;
+        z-index: 2 !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy > span {
+        display: block !important;
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 9px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy h1 {
+        font-size: clamp(23px, 7vw, 29px) !important;
+        line-height: 1.05 !important;
+        margin: 0 0 9px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy p {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        margin: 0 0 12px !important;
+        max-width: 210px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy .ref-button {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 11px 15px !important;
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+    }
+
+    #pageHeroSlider .ref-arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        font-size: 20px !important;
+        z-index: 4 !important;
+    }
+
+    #pageHeroSlider .ref-prev {
+        left: 7px !important;
+    }
+
+    #pageHeroSlider .ref-next {
+        right: 7px !important;
+    }
+
+    #pageHeroSlider .ref-dots {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 5 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 7px !important;
+    }
+
+    #pageHeroSlider .ref-dots button {
+        width: 7px !important;
+        height: 7px !important;
+        min-width: 7px !important;
+        min-height: 7px !important;
+        padding: 0 !important;
+    }
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 380px) {
+    #pageHeroSlider.ref-hero {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy {
+        width: 75% !important;
+        padding-left: 14px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy h1 {
+        font-size: 23px !important;
+    }
+
+    #pageHeroSlider .ref-slide-copy p {
+        font-size: 9px !important;
+    }
+}
+
+/* Center the three slider dots on mobile */
+@media (max-width: 760px) {
+    #pageHeroSlider .ref-dots {
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Homepage hero slider dots - mobile center alignment */
+@media (max-width: 760px) {
+    #refHero .ref-dots {
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+}
