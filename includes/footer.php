@@ -16,7 +16,7 @@
       </p>
 
       <div class="footer-socials">
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM_PAGE/"
+        <a href="https://www.instagram.com/sugnayu.herbal/"
           target="_blank" rel="noopener noreferrer"
           aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -26,15 +26,7 @@
           </svg>
         </a>
 
-        <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE/"
-          target="_blank" rel="noopener noreferrer"
-          aria-label="Facebook" title="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4C17.3 1.2 16.2 1 15 1c-3.2 0-5 1.9-5 5.4V9H7v4h3v8z"></path>
-          </svg>
-        </a>
-
-        <a href="mailto:YOUR_EMAIL@example.com"
+        <a href="mailto:contact@sugnayu.com"
           aria-label="Email SUGNAYU" title="Email">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2"></rect>
@@ -42,7 +34,7 @@
           </svg>
         </a>
 
-        <a href="https://wa.me/91YOURNUMBER"
+        <a href="https://wa.me/+91 70143 72162"
           target="_blank" rel="noopener noreferrer"
           aria-label="WhatsApp" title="WhatsApp">
           <svg viewBox="0 0 24 24" aria-hidden="true">
