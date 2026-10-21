@@ -30,11 +30,7 @@ include __DIR__ . "/includes/header.php";
 
 ?>
 <main>
-  <section class="page-hero"><span class="eyebrow">THE SUGNAYU COLLECTION</span>
-    <h1>Find your place in<br><span>the everyday ritual.</span></h1>
-    <p>Explore the SUGNAYU hair-care collection. Product information is based on the packaging details currently available.</p>
-    <div class="breadcrumb"><a href="index.php">Home</a><span>/</span><span>Shop</span></div>
-  </section>
+  <?php include __DIR__ . "/includes/hero-slider.php"; ?>
   <section class="section shop-section">
 
     <div class="shop-toolbar">

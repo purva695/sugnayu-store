@@ -295,7 +295,9 @@ include __DIR__ . "/includes/header.php";
 
   <!-- TRUSTED BY LEADING BRANDS -->
   <section class="ref-trusted">
-    <span class="ref-kicker"><h2>TRUSTED BY LEADING BRANDS</h2></span>
+    <span class="ref-kicker">
+      <h2>TRUSTED BY LEADING BRANDS</h2>
+    </span>
 
     <div class="ref-brand-logos">
       <img src="assets/images/brand-amazon.jpg" alt="Amazon">
@@ -306,6 +308,59 @@ include __DIR__ . "/includes/header.php";
       <img src="assets/images/brand-meesho.png" alt="Meesho">
     </div>
   </section>
+
+  <!-- SUGNAYU BENEFITS SECTION -->
+  <section class="sugnayu-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M38 8C20 8 9 17 10 29c1 7 7 11 14 8C35 32 38 8 38 8Z" />
+            <path d="M8 41c6-11 13-17 23-24" />
+          </svg>
+        </div>
+        <h3>Thoughtful Hair Care</h3>
+        <p>Explore hair-care essentials for your everyday routine.</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M5 13h25v23H5zM30 21h8l6 8v7H30z" />
+            <circle cx="13" cy="38" r="4" />
+            <circle cx="37" cy="38" r="4" />
+            <path d="M9 19h16M9 25h12" />
+          </svg>
+        </div>
+        <h3>Convenient Shopping</h3>
+        <p>Browse the SUGNAYU collection in one simple place.</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 41S7 31 7 18a10 10 0 0 1 17-7 10 10 0 0 1 17 7c0 13-17 23-17 23Z" />
+            <path d="m17 23 5 5 10-11" />
+          </svg>
+        </div>
+        <h3>Carefully Selected</h3>
+        <p>Find product details to help guide your choices.</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M8 16h32l-3 26H11L8 16Z" />
+            <path d="M17 17v-5a7 7 0 0 1 14 0v5" />
+            <path d="M18 27h12" />
+          </svg>
+        </div>
+        <h3>Everyday Essentials</h3>
+        <p>Discover products to explore for your personal-care routine.</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 

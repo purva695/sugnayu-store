@@ -5,11 +5,7 @@ $activePage = "about";
 include __DIR__ . "/includes/header.php";
 ?>
 <main>
-  <section class="page-hero"><span class="eyebrow">OUR STORY</span>
-    <h1>Everyday care,<br><span>with a thoughtful touch.</span></h1>
-    <p>Welcome to SUGNAYU. We're creating a simple, welcoming place to explore our brand and learn about the products we offer.</p>
-    <div class="breadcrumb"><a href="index.php">Home</a><span>/</span><span>Our Story</span></div>
-  </section>
+  <?php include __DIR__ . "/includes/hero-slider.php"; ?>
   <section class="story-page section">
     <div class="story-page-logo"><img src="assets/images/sugnayu-logo.jpg" alt="SUGNAYU brand logo"></div>
     <div><span class="eyebrow">GET TO KNOW US</span>
