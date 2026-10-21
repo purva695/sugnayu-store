@@ -33,15 +33,6 @@
             <path d="m3 6 9 7 9-7"></path>
           </svg>
         </a>
-
-        <a href="https://wa.me/+91 70143 72162"
-          target="_blank" rel="noopener noreferrer"
-          aria-label="WhatsApp" title="WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4.1Z"></path>
-            <path d="M8.5 8.2c.5 3 2.3 4.8 5.3 5.9l1.5-1.4 2 1c-.2 1.5-1.2 2.2-2.7 2.2-3.6-.3-7.8-4.5-8-8.1 0-1.4.7-2.4 2.1-2.6l1.1 2z"></path>
-          </svg>
-        </a>
       </div>
     </div>
 
@@ -82,6 +73,21 @@
 </footer>
 
 <script src="assets/js/script.js?v=<?= filemtime(__DIR__ . '/../assets/js/script.js') ?>"></script>
+<!-- FIXED WHATSAPP BUTTON -->
+<a
+  href="https://wa.me/91 70143 72162"
+  class="sugnayu-whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with SUGNAYU on WhatsApp"
+  title="Chat with us on WhatsApp">
+
+  <img
+    src="assets/images/whatsapp.png"
+    alt="WhatsApp"
+    class="whatsapp-logo">
+
+</a>
 </body>
 
 </html>

@@ -5318,3 +5318,104 @@ footer .footer-brand img {
     background: transparent !important;
     object-fit: contain !important;
 }
+/* ===== SUGNAYU FIXED WHATSAPP BUTTON ===== */
+
+.sugnayu-whatsapp-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 24px !important;
+    z-index: 99999 !important;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sugnayu-whatsapp-float svg {
+    display: block;
+    width: 34px;
+    height: 34px;
+}
+
+.sugnayu-whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+}
+
+@media (max-width: 760px) {
+    .sugnayu-whatsapp-float {
+        right: 16px !important;
+        bottom: 18px !important;
+        width: 52px;
+        height: 52px;
+    }
+
+    .sugnayu-whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* WhatsApp logo: original green + white border, transparent outside */
+
+.sugnayu-whatsapp-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 24px !important;
+    z-index: 99999 !important;
+
+    width: 52px !important;
+    height: 52px !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.sugnayu-whatsapp-float .whatsapp-logo {
+    display: block !important;
+    width: 52px !important;
+    height: 52px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+}
+
+.sugnayu-whatsapp-float:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: scale(1.05);
+}
+
+@media (max-width: 760px) {
+    .sugnayu-whatsapp-float {
+        right: 16px !important;
+        bottom: 18px !important;
+        width: 46px !important;
+        height: 46px !important;
+    }
+
+    .sugnayu-whatsapp-float .whatsapp-logo {
+        width: 46px !important;
+        height: 46px !important;
+    }
+}
