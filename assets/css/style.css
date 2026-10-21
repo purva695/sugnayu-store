@@ -2526,7 +2526,7 @@ body {
 .ref-product-photo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     transition: transform .3s ease;
 }

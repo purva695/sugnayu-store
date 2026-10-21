@@ -9,21 +9,21 @@ $homeProducts = sugnayuProducts();
 
 $slides = [
   [
-    "image" => "assets/images/hero-image-1.png",
+    "image" => "assets/images/hero-image-1.jpg",
     "eyebrow" => "HAIR CARE RITUALS",
     "title" => "Good Hair<br>Takes Time",
     "description" => "Discover the SUGNAYU hair-care collection.",
     "button" => "Explore Collection"
   ],
   [
-    "image" => "assets/images/hero-image-2.png",
+    "image" => "assets/images/hero-image-2.jpg",
     "eyebrow" => "NEW ARRIVAL",
     "title" => "Stronger Hair<br>Healthier You",
     "description" => "Find your everyday hair-care essentials.",
     "button" => "Shop Now"
   ],
   [
-    "image" => "assets/images/hero-image-3.png",
+    "image" => "assets/images/hero-image-3.jpg",
     "eyebrow" => "NATURE'S CARE FOR YOUR HAIR",
     "title" => "Healthy Hair<br>Naturally",
     "description" => "Explore the SUGNAYU hair-care collection.",
@@ -75,7 +75,7 @@ include __DIR__ . "/includes/header.php";
   <!-- WHO WE ARE -->
   <section class="ref-about" id="about">
     <div class="ref-about-photo">
-      <img src="assets/images/combine.png"
+      <img src="assets/images/combine.jpg"
         alt="SUGNAYU hair oil and shampoo collection">
     </div>
 
